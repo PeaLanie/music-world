@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violin Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="modernizr-1.6.min.js"></script> -->
+    <script src="app.js"></script>
+</head>
+<body id="body">
+    <div class="wrapper">
+        <div class="main">
+            <div id="mainGame">
+                <img id="treble-staff" style="z-index: -7;" src="img/treble-staff.png" alt="">
+                <canvas id="canvasMain">
+                    Your browser does not support HTML5 Canvas.
+                </canvas>
+            </div>
+            <div class="btnsAndSoundControl">
+                <div id="controls">
+                    <div class="noteKeys">
+                        <div id="A" class="btn">A</div>
+                        <div id="B" class="btn">B</div>
+                        <div id="C" class="btn">C</div>
+                        <div id="D" class="btn">D</div>
+                        <div id="E" class="btn">E</div>
+                        <div id="F" class="btn">F</div>
+                        <div id="G" class="btn">G</div>
+                    </div>
+                </div>
+                <div class="soundControl">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="sideBar">
+            <div class="gameFunctionality">
+                <div class="leftCol">
+                    <div class="lifespan"></div>
+                    <div class="current-score"></div>
+                </div>
+                <div class="midCol">
+                    <div class="mode">
+                        <div class="modeBtnDiv">
+                            <div id="all" class="modeButton selectedMode">ALL</div>
+                            <div id="wsn" class="modeButton">WSN</div>
+                            <div id="osn" class="modeButton">OSN</div>
+                        </div>
+                    </div>
+                    <div class="displayNoteDiv">
+                        <button class="displayNotesButton">Dispay Notes</button>
+                    </div>
+                </div>
+                <div class="rightCol">
+                    <div class="highscore"></div>
+                </div>
+            </div>
+            <div class="displayAutoNote">
+                <button class="autoNoteBtn">Play Random</button>
+                <div class="timeInterval">
+                    <div class="time"></div>
+                    <div class="interval">
+                        <div class="up">UP</div>
+                        <div class="down">DOWN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

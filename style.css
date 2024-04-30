@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  gap: 1rem;
+  margin: auto;
+}
+
+/* MAIN SECTION */
+
+#mainGame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 497px;
+  height: 649px;
+  margin: auto;
+}
+
+#canvasMain {
+  z-index: 7;
+}
+
+#treble-staff {
+  position: absolute;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.noteKeys {
+  display: flex;
+}
+.disabled {
+  color: #acacac;
+}
+
+.btn {
+  padding: 1rem;
+  border-right: 2px solid;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.btn:last-child {
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+.btnsAndSoundControl {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.soundControl {
+  text-transform: uppercase;
+  font-size: small;
+  width: 5rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 2px solid;
+}
+
+/* SIDE BAR */
+
+.sideBar {
+  background-color: #d1d1d1;
+  border-left: 7px solid black;
+  width: 100%;
+  min-width: 412px;
+  height: 100vh;
+  padding: 1rem;
+  transition: background 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.gameFunctionality {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.lifespan {
+  margin: 1rem 0;
+}
+.highscore {
+  margin: 1rem 0;
+}
+
+.mode {
+  margin: 1rem;
+}
+.modeBtnDiv {
+  display: flex;
+  border: 2px solid black;
+  transition: border 0.5s ease-in-out;
+}
+.modeButton {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out;
+}
+
+.displayNoteDiv {
+  text-align: center;
+}
+.displayNotesButton {
+  padding: 0.5rem;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 7px;
+  text-transform: uppercase;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out, border 500ms ease-in-out;
+}
+.displayNotesButton:hover, .autoNoteBtn:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+}
+
+.displayAutoNote {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.autoNoteBtn {
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 7px;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out, border 500ms ease-in-out;
+}
+.timeInterval {
+  display: flex;
+  gap: 0.5rem;
+  align-content: center;
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+.timeInterval > .time {
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+.timeInterval > .interval {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+  border-left: 2px solid;
+}
+.timeInterval > .interval .up, .down {
+  cursor: pointer;
+}
+
+/* NON-SECTION */
+
+.popup {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 7;
+}
+
+.popUpMsg {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  width: 350px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.closeBtn {
+  border: 2px solid;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 200px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.selectedMode {
+  background-color: black;
+  color: white;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.greenHighlight {
+  background-color: green;
+}
+.redHighlight {
+  background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .sideBar {
+    height: 100%;
+  }
+}
