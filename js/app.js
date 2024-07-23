@@ -4,31 +4,31 @@ function eventWindowLoaded() {
   canvasApp();
 }
 
-// function canvasSupport () {
-//     return Modernizr.canvas;
-// }
+function canvasSupport () {
+    //return Modernizr.canvas;
+}
 
 function canvasApp() {
-  //   if (!canvasSupport()) {
-  //     return;
-  //   } else {
-  //     var theCanvas = document.getElementById("canvas");
-  //     var context = theCanvas.getContext("2d");
-  //   }
-  const theCanvas = document.getElementById("canvasMain");
-  const c = theCanvas.getContext("2d");
+    if (!canvasSupport()) {
+      return;
+    } else {
+      const theCanvas = document.getElementById("canvasMain");
+      const c = theCanvas.getContext("2d");
+    }
+  // const theCanvas = document.getElementById("canvasMain");
+  // const c = theCanvas.getContext("2d");
 
   theCanvas.setAttribute("width", "497");
   theCanvas.setAttribute("height", "647");
 
   const notesObjAll = {
-    40: "DH",
-    72: "CH",
-    103: "BH",
-    135: "AH",
-    167: "GH",
-    198: "FM",
-    229: "EM",
+    // 40: "DH",
+    // 72: "CH",
+    // 103: "BH",
+    // 135: "AH",
+    // 167: "GH",
+    // 198: "FM",
+    // 229: "EM",
     261: "DM",
     292: "CM",
     324: "BM",
@@ -37,10 +37,10 @@ function canvasApp() {
     419: "FL",
     451: "EL",
     482: "DL",
-    513: "CL",
-    545: "BL",
-    576: "AL",
-    608: "GL",
+    // 513: "CL",
+    // 545: "BL",
+    // 576: "AL",
+    // 608: "GL",
   };
   const notesObjOnStaff = {
     198: "FM",
@@ -127,6 +127,9 @@ function canvasApp() {
   const upArrow = document.querySelector(".up");
   const downArrow = document.querySelector(".down");
   const timeIntervalChangeDiv = document.querySelector(".interval");
+  const tiktok = document.querySelector('input[name="note"]:checked');
+  const submitNoteDuration = document.querySelector(".submitNoteDuration");
+  const sixteenthNotes = document.querySelectorAll(".sixteenthNote");
   let score = 0;
   let heart = 3;
   let newHighScore = parseInt(localStorage.highscore);
@@ -446,6 +449,16 @@ function canvasApp() {
     }
     timeInterval.textContent = time/1000;
   })
+
+  submitNoteDuration.addEventListener("click", (e) => {
+    if (submitNoteDuration.textContent != "STOP") {
+      playNoteDuration(tiktok, sixteenthNotes);
+      //submitNoteDuration.textContent = "STOP";
+    } else {
+      
+      submitNoteDuration.textContent = "PLAY";
+    }
+  })
   
 
   // FUNCTIONS *******************************************************
@@ -603,7 +616,7 @@ function canvasApp() {
 
   function timeLaps(obj) {
     let arr = Object.keys(obj);
-    arr = arr.slice(3,);
+    //arr = arr.slice(3,);
     
     randomNum = Math.floor(Math.random() * arr.length);
       dy = arr[randomNum];
@@ -632,6 +645,61 @@ function canvasApp() {
     c.fillText("D", 220, 499);
     c.fillText("G", 220, 625);
     c.closePath();
+  }
+
+  function playNoteDuration1(btn, inputEl, intervalID, container) {
+    let time;
+    if (btn.textContent == "STOP") {
+      console.log(intervalID)
+      clearInterval(intervalID);
+    } else {
+      
+      if (inputEl.value == "whole") {
+        
+      } else if (inputEl.value == "half") {
+        
+      } else if (inputEl.value == "quarter") {
+        time = 1000;
+        intervalID = setInterval(() => {
+          console.log(intervalID)
+          container.forEach((item, index) => {
+            if (item.className == "sixteenthNote tiktok") {
+              container[index+1].className = "sixteentheNote tiktok";
+              item.className = "sixteenthNote"
+            }
+          })
+        }, time)
+        return intervalID;
+      } else if (inputEl.value == "eighth") {
+  
+      } else {
+  
+      }
+    }
+  }
+
+  function playNoteDuration(inputEl, list) {
+    let nextItem;
+    let prevItem;
+    if (inputEl.value == "quarter") {
+      let arrIter = list[Symbol.iterator]();
+      console.log(arrIter.next().value)
+      console.log(arrIter.next().value)
+      // sixteenthNotes.forEach((item, index, arr) => {
+      //   nextItem = arr[index+1];
+      //   prevItem = arr[index-1];
+        
+      //   if (nextItem != undefined || prevItem != undefined) {
+      //     if (item.className == "sixteenthNote tiktok") {
+      //       if (prevItem == undefined) {
+      //         nextItem = arr[1]
+      //       }
+      //       nextItem.className = "sixteenthNote tiktok";
+      //       item.className = "sixteenthNote";
+      //     }
+      //   }
+      // })
+    }
   }
   
 }

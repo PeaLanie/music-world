@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Violin Notes</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="modernizr-1.6.min.js"></script> -->
+    <script src="js/modernizr.js"></script>
     <script src="app.js"></script>
 </head>
 <body id="body">
@@ -64,6 +64,55 @@
                         <div class="up">UP</div>
                         <div class="down">DOWN</div>
                     </div>
+                </div>
+            </div>
+            <div class="notesDuration">
+                <h3 class="title">Notes Duration</h3>
+                <form>
+                    <legend>Select a Note:</legend>
+                    <div>
+                        <div>
+                            <input type="radio" id="wholeNote" class="noteType" name="note" value="whole" />
+                            <label for="wholeNote">Whole</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="halfNote" class="noteType" name="note" value="half" />
+                            <label for="halfNote">Half</label>
+                        </div>
+                        <div>
+                            <input type="radio" checked id="quarterNote" class="noteType" name="note" value="quarter" />
+                            <label for="quarterNote">Quarter</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="eighthNote" class="noteType" name="note" value="eighth" />
+                            <label for="eighthNote">Eighth</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="sixteenthNote" class="noteType" name="note" value="sixteenth" />
+                            <label for="sixteenthNote">Sixteenth</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="submitNoteDuration">Play</div>
+                    </div>
+                </form>
+                <div class="displayDuration">
+                    <div class="sixteenthNote tiktok"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
+                    <div class="sixteenthNote"></div>
                 </div>
             </div>
         </div>
